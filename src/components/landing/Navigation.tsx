@@ -163,7 +163,7 @@ export default function Navigation() {
                 CT
               </div>
             </div>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -202,7 +202,7 @@ export default function Navigation() {
                             </h3>
                             <div className="space-y-3">
                               {category.items.map((item) => (
-                                <Link
+                                <a
                                   key={item.href}
                                   href={item.href}
                                   className="block group"
@@ -219,7 +219,7 @@ export default function Navigation() {
                                       </p>
                                     </div>
                                   </div>
-                                </Link>
+                                </a>
                               ))}
                             </div>
                           </div>
@@ -236,13 +236,13 @@ export default function Navigation() {
                               Book a personalized demo with our team
                             </p>
                           </div>
-                          <Link
+                          <a
                             href="/demo"
                             className="bg-churchtalk-red text-white px-6 py-3 rounded-md font-semibold hover:bg-churchtalk-charcoal transition-all"
                             onClick={() => setIsProductMenuOpen(false)}
                           >
                             Schedule Demo
-                          </Link>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -251,29 +251,29 @@ export default function Navigation() {
               </div>
 
               {navLinks.map((link) => (
-                <Link
+                <a
                   key={link.href}
                   href={link.href}
                   className="text-churchtalk-charcoal hover:text-churchtalk-red transition-colors font-medium"
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
             </div>
             
             <div className="flex items-center space-x-4">
-              <Link
-                href="/login"
+              <a
+                href="https://app.churchtalk.pro/login"
                 className="text-churchtalk-charcoal hover:text-churchtalk-red transition-colors font-medium"
               >
                 Login
-              </Link>
-              <Link
-                href="/signup"
+              </a>
+              <a
+                href="https://app.churchtalk.pro/signup"
                 className="bg-churchtalk-red text-white px-6 py-2.5 rounded-md font-semibold hover:bg-churchtalk-charcoal transition-all transform hover:scale-105"
               >
                 Get Started
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -321,7 +321,7 @@ export default function Navigation() {
                   height={30}
                   className="h-8 w-auto"
                 />
-              </Link>
+              </a>
               <button 
                 onClick={() => setIsMenuOpen(false)} 
                 className="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors"
@@ -341,7 +341,7 @@ export default function Navigation() {
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Products</h3>
                   <div className="space-y-3">
                     {productFeatures.flatMap(category => category.items).map((item) => (
-                      <Link
+                      <a
                         key={item.href}
                         href={item.href}
                         className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
@@ -352,7 +352,7 @@ export default function Navigation() {
                           <p className="font-medium text-gray-900">{item.label}</p>
                           <p className="text-sm text-gray-600">{item.description}</p>
                         </div>
-                      </Link>
+                      </a>
                     ))}
                   </div>
                 </div>
@@ -363,14 +363,14 @@ export default function Navigation() {
                 {/* Main Nav Links */}
                 <div className="space-y-4">
                   {navLinks.map((link) => (
-                    <Link
+                    <a
                       key={link.href}
                       href={link.href}
                       className="block text-lg font-medium text-gray-900 hover:text-churchtalk-red transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {link.label}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>
@@ -378,20 +378,20 @@ export default function Navigation() {
 
             {/* Bottom Actions */}
             <div className="p-6 border-t border-gray-200 space-y-3">
-              <Link
-                href="/login"
+              <a
+                href="https://app.churchtalk.pro/login"
                 className="block w-full text-center py-3 border-2 border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Login
-              </Link>
-              <Link
-                href="/signup"
+              </a>
+              <a
+                href="https://app.churchtalk.pro/signup"
                 className="block w-full text-center py-3 bg-churchtalk-red text-white rounded-lg font-medium hover:bg-churchtalk-charcoal transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Get Started
-              </Link>
+              </a>
             </div>
           </div>
         </div>

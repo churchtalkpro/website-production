@@ -447,7 +447,7 @@ export default function Value() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="/signup" 
+              href="https://app.churchtalk.pro/signup" 
               className="bg-churchtalk-red text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-red-700 transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl"
             >
               Get Started

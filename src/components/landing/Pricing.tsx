@@ -28,7 +28,7 @@ export default function Pricing() {
       ],
       giving: '3% + $0.30 per transaction',
       cta: 'Get Started',
-      ctaLink: '/signup',
+      ctaLink: 'https://app.churchtalk.pro/signup',
       popular: false
     },
     {
@@ -51,7 +51,7 @@ export default function Pricing() {
       ],
       giving: '2.5% + $0.30 per transaction',
       cta: 'Start Free Trial',
-      ctaLink: '/signup?plan=pro',
+      ctaLink: 'https://app.churchtalk.pro/signup?plan=pro',
       popular: true
     }
   ];
@@ -71,7 +71,7 @@ export default function Pricing() {
       'Custom training'
     ],
     cta: 'Contact Sales',
-    ctaLink: '/contact-sales'
+    ctaLink: '/contact'
   };
 
   const addons = [
@@ -127,7 +127,7 @@ export default function Pricing() {
             Upgrade when you need automation and powerful integrations.
           </p>
           <p className="text-gray-500">
-            Churches with 250+ members? <Link href="/contact-sales" className="text-churchtalk-red font-semibold hover:underline">Contact us for custom pricing</Link>
+            Churches with 250+ members? <Link href="/contact" className="text-churchtalk-red font-semibold hover:underline">Contact us for custom pricing</Link>
           </p>
 
           {/* Billing Toggle */}

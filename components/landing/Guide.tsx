@@ -144,7 +144,7 @@ export default function Guide() {
               Built by a family who understands your ministry challenges
             </p>
             <a 
-              href="/signup" 
+              href="https://app.churchtalk.pro/signup" 
               className="inline-block bg-churchtalk-red text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition-all transform hover:scale-105"
             >
               Get Started Free

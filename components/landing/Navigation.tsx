@@ -262,18 +262,18 @@ export default function Navigation() {
             </div>
             
             <div className="flex items-center space-x-4">
-              <Link
-                href="/login"
+              <a
+                href="https://app.churchtalk.pro/login"
                 className="text-churchtalk-charcoal hover:text-churchtalk-red transition-colors font-medium"
               >
                 Login
-              </Link>
-              <Link
-                href="/signup"
+              </a>
+              <a
+                href="https://app.churchtalk.pro/signup"
                 className="bg-churchtalk-red text-white px-6 py-2.5 rounded-md font-semibold hover:bg-churchtalk-charcoal transition-all transform hover:scale-105"
               >
                 Get Started
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -378,20 +378,18 @@ export default function Navigation() {
 
             {/* Bottom Actions */}
             <div className="p-6 border-t border-gray-200 space-y-3">
-              <Link
-                href="/login"
+              <a
+                href="https://app.churchtalk.pro/login"
                 className="block w-full text-center py-3 border-2 border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
               >
                 Login
-              </Link>
-              <Link
-                href="/signup"
+              </a>
+              <a
+                href="https://app.churchtalk.pro/signup"
                 className="block w-full text-center py-3 bg-churchtalk-red text-white rounded-lg font-medium hover:bg-churchtalk-charcoal transition-colors"
-                onClick={() => setIsMenuOpen(false)}
               >
                 Get Started
-              </Link>
+              </a>
             </div>
           </div>
         </div>

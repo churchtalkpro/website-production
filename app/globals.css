@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Global font size adjustments */
+@layer base {
+  /* Reduce heading sizes */
+  h1 {
+    @apply text-2xl;
+  }
+  
+  @media (min-width: 768px) {
+    h1 {
+      @apply text-3xl;
+    }
+  }
+  
+  h2 {
+    @apply text-xl;
+  }
+  
+  @media (min-width: 768px) {
+    h2 {
+      @apply text-2xl;
+    }
+  }
+  
+  h3 {
+    @apply text-lg;
+  }
+  
+  @media (min-width: 768px) {
+    h3 {
+      @apply text-xl;
+    }
+  }
+  
+  h4 {
+    @apply text-base;
+  }
+  
+  @media (min-width: 768px) {
+    h4 {
+      @apply text-lg;
+    }
+  }
+  
+  /* Ensure base text is reasonable size */
+  p, div {
+    @apply text-sm;
+  }
+  
+  @media (min-width: 768px) {
+    p, div {
+      @apply text-base;
+    }
+  }
+}
+
+/* Global Form Input Styles - Fix white-on-white issue */
+@layer base {
+  /* Ensure all form inputs have visible text and borders */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="search"],
+  textarea,
+  select {
+    @apply text-gray-900 bg-white border-gray-300;
+  }
+
+  /* Ensure labels are always visible */
+  label {
+    @apply text-gray-700 font-medium;
+  }
+
+  /* Improved placeholder visibility */
+  input::placeholder,
+  textarea::placeholder {
+    @apply text-gray-500;
+    opacity: 1;
+  }
+
+  /* Focus state for placeholders */
+  input:focus::placeholder,
+  textarea:focus::placeholder {
+    @apply text-gray-400;
+    opacity: 1;
+  }
+
+  /* Disabled state */
+  input:disabled,
+  textarea:disabled,
+  select:disabled {
+    @apply bg-gray-50 text-gray-500 cursor-not-allowed;
+  }
+
+  /* Ensure checkboxes and radios are visible */
+  input[type="checkbox"],
+  input[type="radio"] {
+    @apply text-[#D02220] focus:ring-[#D02220] border-gray-300;
+  }
+}
+
+/* Simple animations to replace framer-motion */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out;
+}
+
+/* Mobile-first responsive utilities */
+@layer utilities {
+  /* Hide scrollbars on mobile for better UX */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Better touch targets for mobile */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+  
+  /* Mobile-friendly spacing */
+  .mobile-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Responsive text utilities */
+  .text-responsive {
+    @apply text-sm sm:text-base;
+  }
+}

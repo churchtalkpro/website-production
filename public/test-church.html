@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Church Creation Test</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 6px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        .success {
+            background: #d1fae5;
+            border: 1px solid #10b981;
+            color: #065f46;
+        }
+        .error {
+            background: #fee2e2;
+            border: 1px solid #ef4444;
+            color: #991b1b;
+        }
+        .info {
+            background: #dbeafe;
+            border: 1px solid #3b82f6;
+            color: #1e40af;
+        }
+        h1 {
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Church Creation Test</h1>
+        <p>This test will verify that churches can be created and all relationships are properly established.</p>
+        
+        <button id="runTest" onclick="runChurchTest()">Run Church Creation Test</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        async function runChurchTest() {
+            const button = document.getElementById('runTest');
+            const resultDiv = document.getElementById('result');
+            
+            button.disabled = true;
+            button.textContent = 'Running test...';
+            resultDiv.innerHTML = '<div class="result info">Testing church creation...</div>';
+            
+            try {
+                const response = await fetch('/api/test-church-creation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok && data.success) {
+                    resultDiv.innerHTML = `
+                        <div class="result success">
+✅ Test Passed!
+
+Church Created: ${data.churchCreated ? 'Yes' : 'No'}
+Owner Relationship: ${data.relationshipsCreated.owner ? '✓' : '✗'}
+Admin Relationship: ${data.relationshipsCreated.admin ? '✓' : '✗'}
+User Relationship: ${data.relationshipsCreated.user ? '✓' : '✗'}
+
+Details:
+${JSON.stringify(data.details, null, 2)}
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="result error">
+❌ Test Failed!
+
+Error: ${data.error}
+Details: ${data.details || 'No details available'}
+
+${data.code ? `Error Code: ${data.code}` : ''}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="result error">
+❌ Test Error!
+
+${error.message}
+
+Make sure you are logged in before running this test.
+                    </div>
+                `;
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Run Church Creation Test';
+            }
+        }
+    </script>
+</body>
+</html>

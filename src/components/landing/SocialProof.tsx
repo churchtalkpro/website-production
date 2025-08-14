@@ -76,7 +76,7 @@ export default function SocialProof() {
           </p>
           
           <a 
-            href="https://app.churchtalk.pro/signup"
+            href="/signup"
             className="inline-block bg-churchtalk-red text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-red-700 transition-all transform hover:scale-105"
           >
             Get Started Free

@@ -116,7 +116,7 @@ export default function PremiumHero() {
             <span className="text-sm text-white">
               🎉 Limited Time: First 153 churches get lifetime 50% off!
             </span>
-            <Link href="/#pricing" className="text-purple-300 hover:text-white transition-colors">
+            <Link href="/pricing" className="text-purple-300 hover:text-white transition-colors">
               Claim Now →
             </Link>
           </div>
@@ -154,7 +154,7 @@ export default function PremiumHero() {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           >
             <Link
-              href="https://app.churchtalk.pro/signup"
+              href="/signup"
               className="group relative inline-flex items-center justify-center px-8 py-4 font-semibold text-white transition-all duration-200 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25"
             >
               <span className="relative z-10">Start Free Trial</span>
@@ -232,7 +232,7 @@ export default function PremiumHero() {
                   className="text-center"
                 >
                   <p className="text-xl text-white mb-6 italic">
-                    &ldquo;{testimonials[currentTestimonial].quote}&rdquo;
+                    "{testimonials[currentTestimonial].quote}"
                   </p>
                   <div className="flex items-center justify-center gap-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />

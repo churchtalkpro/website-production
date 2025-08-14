@@ -127,7 +127,7 @@ export default function Pricing() {
             Upgrade when you need automation and powerful integrations.
           </p>
           <p className="text-gray-500">
-            Churches with 250+ members? <Link href="/contact" className="text-churchtalk-red font-semibold hover:underline">Contact us for custom pricing</Link>
+            Churches with 250+ members? <Link href="/contact-sales" className="text-churchtalk-red font-semibold hover:underline">Contact us for custom pricing</Link>
           </p>
 
           {/* Billing Toggle */}

@@ -166,7 +166,7 @@ export default function Plan() {
         {/* CTA */}
         <div className={`text-center ${isVisible ? 'animate-fade-up animation-delay-600' : 'opacity-0'}`}>
           <Link
-            href="https://app.churchtalk.pro/signup"
+            href="/signup"
             className="inline-block bg-churchtalk-red text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-700 transition-all transform hover:scale-105"
           >
             Start Free Today
